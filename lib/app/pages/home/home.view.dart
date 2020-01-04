@@ -7,7 +7,6 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-
   var _vm = HomeVm();
   var _newPhrase = "";
 
@@ -19,17 +18,14 @@ class _HomeViewState extends State<HomeView> {
         backgroundColor: Colors.green,
       ),
       body: Container(
-        child: ListView(
-          padding: EdgeInsets.fromLTRB(20, 30, 20, 30),
+        padding: EdgeInsets.all(15),
+        child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(40),
-              child: Image.network("http://placehold.it/400x100"),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 30, bottom: 30),
-              child: Text(_newPhrase),
-            ),
+            Image.network("http://placehold.it/400x100"),
+            Text(_newPhrase, style: TextStyle(fontSize: 20),),
             RaisedButton(
               color: Colors.green,
               shape: RoundedRectangleBorder(
@@ -43,11 +39,13 @@ class _HomeViewState extends State<HomeView> {
               child: Text(
                 "Nova Frase",
                 style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                TextStyle(color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25),
               ),
             )
           ],
-        ),
+            )),
       ),
     );
   }
